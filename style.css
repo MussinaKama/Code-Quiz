@@ -5,6 +5,7 @@
 body {
     width: 960px;
     margin: auto;
+
 }
 
 h1 {
@@ -13,19 +14,22 @@ h1 {
 .container {
     margin: auto;
     width: 60%;
-
 }
+
 
 .buttons {
     display: grid;
+    margin-top: 15px;
 }
 
 .btn {
-    background: rgb(13, 182, 56);
+    background: rgb(231, 20, 203);
     padding: 10px;
     width: 300px;
     margin: 2px;
     border-radius: 8px;
+    color: white;
+    font-size: 15px;
    
 }
 
@@ -40,4 +44,18 @@ h1 {
     background: purple;
     color: white;
     border-radius: 8px;
+}
+
+#timer {
+    font-size: 30px;
+    
+}
+
+#userAnswer {
+    color: lightslategrey;
+}
+
+#question {
+    font-weight: bold;
+    font-size: 20px;
 }
