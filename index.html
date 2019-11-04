@@ -12,8 +12,9 @@
 
 <body>
     <h1>Code Quiz Challenge</h1>
-    <nav>
-        <a href="score.html" id="highScore">Highscores</a>
+    <nav class="navbar">
+        <a href="score.html" id="highScore">View Highscores</a>
+        <div id="timer"></div>
     </nav>
     <div class="container">
         <div id="question-container" class="hide">
@@ -26,11 +27,10 @@
                 <p id="userAnswer"></p>
             </div>
         </div>
-        <div>
+        <div id="hide-this">
+            <p id="instructions">This quiz consists of 5 multiple-choice questions. Try to answer for them as fast and correct as you can. Once you've finished, type your initials in input field. To start, click "Start Quiz" button.</p>
             <button id="start-btn">Start Quiz</button>
         </div>
-        <div id="timer"></div>
-
         <div id="finished">
                 <h2>All done!</h2>
                 <p>Your final score is <span id="final-score"></span>.</p>
