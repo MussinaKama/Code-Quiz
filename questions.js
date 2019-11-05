@@ -8,7 +8,6 @@ var displayedQuestion = document.getElementById("question");
 var currentQuestion = 0;
 var isAnswered = false;
 var count = 75;
-var score = 0;
 var counter = 0;
 var finishedTime = 0;
 
@@ -38,9 +37,14 @@ var questions = [
 },
 ];
 
+if(startBtn){
+  startBtn.addEventListener("click", startQuiz);
+}
+var isFinished = document.getElementById('finished')
+if(isFinished){
 
-startBtn.addEventListener("click", startQuiz);
-document.getElementById('finished').style.display = "none";
+  isFinished.style.display = "none";
+}
 
 function startQuiz () {
   event.preventDefault();
@@ -72,13 +76,12 @@ function shuffledQuestions () {
   }
   displayAnswers();
 }
-
+if(answerElement){
 answerElement.addEventListener("click", function() {
     isAnswered = true;
     counter++
     if (event.target.innerText === questions[currentQuestion].answer) {
       document.getElementById("userAnswer").textContent = "Correct!";
-      score +=5;
       checkGameOver();
     
     } else {
@@ -90,31 +93,29 @@ answerElement.addEventListener("click", function() {
   
  
 });
-
+}
 function displayAnswers () {
   displayedQuestion.textContent = questions[currentQuestion].question;
   for (var i = 0; i < questions[currentQuestion].choices.length; i++) {
     document.getElementById("btn" + (i + 1)).textContent = questions[currentQuestion].choices[i];
-
   }
-
 };
 
 function checkGameOver(){
-  if (counter >= 5){
+  if (counter >= 5) {
     questionContainerElement.style.display = "none";
     document.getElementById("timer").style.display = "none";
     document.getElementById('finished').style.display = "block";
-    var user = localStorage.getItem("initials");
-    console.log(user);
     document.getElementById("submit").addEventListener("click", function() {
       event.preventDefault();
-      var initials = document.getElementById("initials").value
-      localStorage.setItem(initials, finishedTime);
-      document.getElementById("final-score").textContent = finishedTime;
-     
+      var initials = {
+        user: document.getElementById("initials").value.trim().toUpperCase(),
+        score: finishedTime,
+      } 
+      console.log(initials);
+      localStorage.setItem("initials", JSON.stringify(initials));
+      window.location.href = "score.html";
     })
-   
     finishedTime = count;
   }
 }

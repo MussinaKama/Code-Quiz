@@ -16,14 +16,18 @@ h1 {
     width: 60%;
 }
 
+#initials {
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+}
 .navbar {
     display: block;
 }
 
 .buttons {
     display: grid;
-    margin-top: 15px;
-    
+    margin-top: 15px; 
 }
 
 .btn {
@@ -35,8 +39,7 @@ h1 {
     color: white;
     font-size: 18px;
     height: 50px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
 }
 
 .hide {
@@ -77,4 +80,21 @@ h1 {
     color: white;
     border-radius: 5px;
     height: 30px;
+}
+
+
+table {
+    background: rgb(233, 236, 59);
+    font-size: 20px;
+    width: 300px;
+    margin: 0;
+    border: 2px;
+    height: 50px;
+    border-radius: 2px;
+    text-align: center;
+    
+}
+
+table, th, td {
+    border: 1px solid black;
 }
